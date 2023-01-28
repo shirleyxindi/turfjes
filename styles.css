@@ -1,0 +1,25 @@
+html, body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+#turfjes {
+    font-weight: 700;
+    font-size: 128px;
+    color: #ff6666;
+}
+
+#reden {
+    padding-left: 8px;
+    font-weight: 700;
+    font-size: 48px;
+    color: #ff6666;
+}
+
+.container {
+    padding: 16px 64px;
+}
