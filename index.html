@@ -10,9 +10,16 @@
 </head>
 <body>
 <div class="container">
-    <h1>Shirley heeft nog <span id="turfjes">...</span> turfjes</h1>
-    <h1>De eerstvolgende die ze moet wegwerken is voor: <span id="reden">...</span></h1>
-    <h1>Dat wordt dus lekker ketelen!</h1>
+    <div id="loading">
+        Aan het laden...
+    </div>
+    <div id="loaded">
+        <div>
+            <h1>Shirley heeft nog <span id="turfjes">...</span> turfjes</h1>
+            <h1>De eerstvolgende die ze moet wegwerken is voor:  <span id="reden">...</span></h1>
+        </div>
+        <div id="next"></div>
+    </div>
 </div>
 <script>
     const xhttp = new XMLHttpRequest();
@@ -23,6 +30,10 @@
         let reden = htmlDoc.getElementsByTagName("table")[0].rows[6].children[4].textContent
         document.getElementById("turfjes").innerHTML = turfjes;
         document.getElementById("reden").innerHTML = reden
+        let numTurf = parseInt(turfjes)
+        document.getElementById("next").innerHTML = numTurf > 0 ? "Dat wordt dus lekker ketelen!" : "Wat is Shirley lekker bezig!"
+        document.getElementById("loading").style.display = "none"
+        document.getElementById("loaded").style.display = "flex"
     }
     xhttp.open("GET", "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ3r7wpLag9BD3UQBtfkhRiESqmTs2kBvl7I209ezwfScYYOXECY4xKGNFccPHgfOu66ZMRUsDDP4mA/pubhtml");
     xhttp.send();
