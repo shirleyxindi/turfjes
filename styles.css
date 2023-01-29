@@ -12,8 +12,8 @@ h1 {
 }
 
 #turfjes {
-    font-weight: 700;
-    font-size: 128px;
+    /*font-weight: 700;*/
+    font-size: 144px;
     color: #ff6666;
 }
 
@@ -27,14 +27,48 @@ h1 {
     padding: 32px 64px;
     display: flex;
     height: 100vh;
+    justify-content: space-between;
+    gap: 64px;
+    width: 100%;
 }
 
 #loaded {
-    width: 100%;
-    display: none;
+    display: flex;
     flex-direction: column;
+    width: 55%;
 }
 
 #next {
     padding-top: 64px;
+}
+
+.bottom {
+    display: flex;
+    gap: 64px;
+}
+
+#image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ketel {
+    height: auto;
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 980px) {
+    .container {
+        flex-direction: column;
+        justify-content: normal;
+    }
+
+    .bottom {
+        flex-wrap: wrap;
+    }
+
+    #loaded {
+        width: 100%;
+    }
 }
